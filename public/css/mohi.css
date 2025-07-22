@@ -1,0 +1,124 @@
+.mt-50{
+margin-top: 50px;
+}
+.vh-6{
+    max-width: 20%;
+}
+
+.h-300 {
+    height: 300px!important;
+}
+.h-325 {
+    height: 325px!important;
+}
+.h-425 {
+     height: 425px!important;
+ }
+.btn-primary {
+    color: rgb(255, 255, 255);
+    background-color: #1ABC9C !important;
+    border-color: #1ABC9C !important;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #20B2AA !important;
+    border-color: #20B2AA !important;
+  }
+.badge-primary {
+    opacity: 75% !important;
+}
+.color-succss{
+    color: #3ccadc !important
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.ltr {
+    direction: ltr;
+}
+.rtl {
+    direction: rtl;
+}
+
+.preview{
+    transition: .3s all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.preview.desktop iframe{
+    transition: all 0.5s linear;
+    margin-top: 70px;
+}
+.preview.desktop iframe {
+    padding: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    border-width: 0;
+    border-radius: 0;
+}
+.preview.tablet iframe {
+    padding: 30px 3px;
+    background-color: #424242;
+    margin: 100px 0;
+    width: 500px;
+    height: 100vh;
+    border-width: 1px;
+    border-radius: 10px;
+    transition: .3s all;
+}
+
+.preview.mobile iframe {
+    background-color: #424242;
+    margin: 100px 0;
+    width: 300px;
+    height: 450px;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 30px 3px;
+    transition: .3s all;
+}
+
+@font-face{
+    font-family:'ponisha';src:url("fonts/ponisha/ponisha.ttf") format("truetype"),
+    url("fonts/ponisha/ponisha.woff") format("woff"),
+    url("fonts/ponisha/ponisha.svg") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+.fa-12px
+{
+    font-size: 12px !important;
+}
+
+.rate .on {
+    color: #ed9c28 !important;
+}
+
+i.pf {
+    font-family: 'ponisha' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.pf-star:before {
+    content: "\e92a";
+}
+.text-nofull{
+    /* width: 100%; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mce-content-body:not([dir=rtl])[data-mce-placeholder]:not(.mce-visualblocks)::before {
+    right: 1px !important;
+}
