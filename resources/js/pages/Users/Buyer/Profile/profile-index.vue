@@ -1,5 +1,6 @@
 <script setup>
 
+<<<<<<< HEAD
 import { computed,ref} from 'vue';
 import { Head, Link, useForm , usePage} from '@inertiajs/vue3';
 import Header from '@/Pages/Users/Buyer/header.vue';
@@ -15,12 +16,27 @@ import { Inertia } from '@inertiajs/inertia';
 
 const errors = computed(() => usePage().props.errors);
 const hasErrors = computed(() => Object.keys(errors.value).length > 0);
+=======
+import { computed,ref,watch} from 'vue';
+import { Head, Link, useForm , usePage} from '@inertiajs/vue3';
+import Header from '@/Pages/Users/Buyer/header.vue';
+import Footer from '@/Pages/Users/Buyer/footer.vue';
+import BreezeInput from '@/Components/Input.vue';
+import BreezeLabel from '@/Components/Label.vue';
+import Aside from '@/Components/Aside.vue';
+import swal from 'sweetalert2';
+
+
+const errors = computed(() => usePage().props.errors);
+
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 const props = defineProps({
     auth:Object,canResetPassword: Boolean,status: String,users:Object,ostans:Object,shahrs:Object,
     notifications:Object,companies:Object,descriptions:Object,alert:Object,token:String,wallet:Number,
     cart:Object
 });
 
+<<<<<<< HEAD
 var now =  new Date();
 
 const form =  useForm({
@@ -35,6 +51,22 @@ const form =  useForm({
     birth:props.users.profile?props.users.profile.birth:null,
     gender:props.users.profile?props.users.profile.gender:null,
     email: props.users.email,
+=======
+
+const form =  useForm({
+    // national_code:props.users.national_code,
+    user_name:props.users.user_name,
+    // name:props.users.name,
+    // lasst_name:props.users.lasst_name,
+    name_show:props.users.name_show,
+    tel:props.users.tel,
+    phone:props.users.phone,
+    // shahr:props.users.profile?props.users.profile.shahr:null,
+    // address:props.users.profile?props.users.profile.address:null,
+    // birth:props.users.profile?props.users.profile.birth:null,
+    // gender:props.users.profile?props.users.profile.gender:null,
+    // email: props.users.email,
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
     image:props.users.profile && props.users.profile.image? props.users.profile.image.url:null,
     biography:props.users.profile?props.users.profile.biography:null,
     password: null,
@@ -58,6 +90,7 @@ const validate = (text)=>{
     })
 }
 
+<<<<<<< HEAD
 const alert = ref(props.alert);
 
 if (alert.value) {
@@ -100,6 +133,58 @@ if (hasErrors.value == true) {
 const submitTime = ()=>{
     Inertia.visit(route('profile.index'),{ only: [errors.value,hasErrors.value,props.alert] })
 }
+=======
+
+watch(() => props.alert, (val) => {
+  if (val) {
+    if (val.title) {
+      swal.fire(val.title, val.text, val.icon);
+    } else {
+      swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', swal.stopTimer);
+          toast.addEventListener('mouseleave', swal.resumeTimer);
+        }
+      }).fire({
+        title: val.text,
+        icon: val.icon,
+      });
+    }
+  }
+});
+
+watch(() => errors.value, (val) => {
+  if (val && Object.keys(val).length > 0) {
+    Object.values(val).forEach((errMsg) => {
+      swal
+        .mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", swal.stopTimer);
+            toast.addEventListener("mouseleave", swal.resumeTimer);
+          },
+        })
+        .fire({
+          title: errMsg,
+          icon: "error",
+        });
+    });
+  }
+});
+
+
+
+
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 
 const submit = () =>{
 
@@ -127,6 +212,7 @@ const submit = () =>{
         }
         else
         {
+<<<<<<< HEAD
             form.post(route('profile.store'),{
                 onFinish:() => submitTime()
             });
@@ -139,6 +225,25 @@ const submitImage = () =>{
     form.post(route('profile.imagestore'),{
         onFinish:() => submitTime()
     });
+=======
+            form.post(route('profile.store'),
+            // {
+            //     onFinish:() => submitTime()
+            // }
+            );
+        }
+    }
+
+
+};
+const submitImage = () =>{
+
+    form.post(route('profile.imagestore'),
+    // {
+    //     onFinish:() => submitTime()
+    // }
+    );
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 
 };
 
@@ -154,9 +259,17 @@ const submitPass = () => {
     {
         if(form.password == form.password_confirmation)
         {
+<<<<<<< HEAD
             form.post(route('password.change'),{
                 onFinish:() => submitTime()
             })
+=======
+            form.post(route('password.change'),
+            // {
+            //     onFinish:() => submitTime()
+            // }
+            )
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
         }
         else
         {
@@ -171,9 +284,17 @@ const submitPass = () => {
 const submitTelChange = () => {
     if(form.tel !== null)
     {
+<<<<<<< HEAD
         form.post(route('profile.store'),{
             onFinish:() => submitTime()
         });
+=======
+        form.post(route('profile.store'),
+        // {
+        //     onFinish:() => submitTime()
+        // }
+        );
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
     }
     else
     {
@@ -242,12 +363,24 @@ const change = () =>{
                                                         <label class="form-label">نام کاربری<span class="text-danger">*</span></label>
                                                         <input  v-model.lazy="form.user_name" readonly="readonly" class="form-control" type="text" placeholder="اینجا تایپ کنید" />
                                                     </div>
+<<<<<<< HEAD
                                                     <div class="col-lg-6 mb-3">
                                                         <label class="form-label">نام نمایشی <span class="text-danger">*</span></label>
                                                         <input  v-model.lazy="form.name_show" class="form-control" type="text" placeholder="اینجا تایپ کنید" name="name_show" autocomplete="name_show" />
                                                     </div>
 
                                                     <div class="col-lg-6">
+=======
+                                                    <div class="col-6 mb-3">
+                                                        <label class="form-label">نام نمایشی <span class="text-danger">*</span></label>
+                                                        <input  v-model.lazy="form.name_show" class="form-control" type="text" placeholder="اینجا تایپ کنید" name="name_show" autocomplete="name_show" />
+                                                    </div>
+                                                    <div class="col-12 mb-3">
+                                                        <label class="form-label">تلفن </label>
+                                                        <input  v-model.lazy="form.phone" class="form-control" type="text" placeholder="اینجا تایپ کنید" name="name_show" autocomplete="name_show" />
+                                                    </div>
+                                                    <div class="col-6 mb-3">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                                         <label for="biography" class="form-label">بیوگرافی</label>
                                                         <textarea v-model.lazy="form.biography" class="bg-light" name="" id="" cols="55" rows="7"
                                                         placeholder="اینجا تایپ کنید" ></textarea>

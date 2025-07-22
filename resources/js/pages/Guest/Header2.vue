@@ -334,7 +334,11 @@ const submit = ()=>{
             </div>
         </div>
     <header class="header-area header-style-1 header-height-2">
+<<<<<<< HEAD
         <div class="mobile-promotion"><span>Grand opening, <strong>up to 15%</strong> off all items. Only <strong>3 days</strong> left</span></div>
+=======
+        <div class="mobile-promotion"><span>تا حالا از <strong>تخفیفات روزانه</strong> استفاده کردی؟<strong>بهتره تا تموم نشدن</strong> ازشون استفاده کنی</span></div>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
         <div class="header-top header-top-ptb-1 d-none d-lg-block">
             <div class="container">
                 <div class="row align-items-center">
@@ -365,6 +369,7 @@ const submit = ()=>{
                                 <li v-if="props.companies && props.companies.phone">کمک میخوایی ؟ شماره تماس : <strong class="text-brand"> {{ props.companies.phone }}+</strong></li>
                                 <li>
                                     <a class="language-dropdown-active" href="#"><i class="fi-rs-angle-small-down"></i> فارسی</a>
+<<<<<<< HEAD
                                     <ul class="language-dropdown">
                                         <li><a href="#"><img :src="$page.props.ziggy.url +'/assets/imgs/theme/flag-fr.png'" alt="">Français</a></li>
                                         <li><a href="#"><img :src="$page.props.ziggy.url +'/assets/imgs/theme/flag-dt.png'" alt="">Deutsch</a></li>
@@ -378,6 +383,13 @@ const submit = ()=>{
                                         <li><a href="#"><img :src="$page.props.ziggy.url +'/assets/imgs/theme/flag-dt.png'" alt="">MBP</a></li>
                                         <li><a href="#"><img :src="$page.props.ziggy.url +'/assets/imgs/theme/flag-ru.png'" alt="">EU</a></li>
                                     </ul>
+=======
+
+                                </li>
+                                <li>
+                                    <a class="language-dropdown-active" href="#"><i class="fi-rs-angle-small-down"></i> ریال</a>
+
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                 </li>
                             </ul>
                         </div>
@@ -455,11 +467,19 @@ const submit = ()=>{
 										<a href='/shop-wishlist'><span class="lable">لیست انتخاب شده</span></a>
 									</div> -->
 									<div class="header-action-icon-2">
+<<<<<<< HEAD
 										<a class='mini-cart-icon' href='#'>
 											<img alt="" :src="$page.props.ziggy.url +'/assets/imgs/theme/icons/icon-cart.svg'" />
 											<span class="pro-count blue" v-if="props.cart">{{ props.cart.count }}</span>
 										</a>
 										<Link :href="route('cart.index')"><span class="lable">سبد خرید</span></Link>
+=======
+										<a class='mini-cart-icon' href="#">
+											<img alt="" :src="$page.props.ziggy.url +'/assets/imgs/theme/icons/icon-cart.svg'" />
+											<span class="pro-count blue" v-if="props.cart &&  props.cart.count > 0">{{ (props.cart.count).toLocaleString("fa-IR") }}</span>
+										</a>
+										<a href="#"><span class="lable">سبد خرید</span></a>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 										<div class="cart-dropdown-wrap cart-dropdown-hm2" >
 											<ul v-if="props.cart">
 												<li v-for="(product,index) in props.cart.products" :key="index">
@@ -480,7 +500,11 @@ const submit = ()=>{
 											</ul>
 											<div class="shopping-cart-footer" v-if="props.cart && props.cart.total > 0">
 												<div class="shopping-cart-total" v-if="props.cart">
+<<<<<<< HEAD
 													<h4 class="d-flex">کل <span class="ms-auto">{{ (props.cart.total).toLocaleString("fa-IR") }}</span></h4>
+=======
+													<h4 class="d-flex">کل <span class="ms-auto">{{ (props.cart.count).toLocaleString("fa-IR") }}</span></h4>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 												</div>
 												<div class="shopping-cart-button">
 													<Link :href="route('cart.index')">سبد</Link>
@@ -506,9 +530,14 @@ const submit = ()=>{
 											<ul v-if="$page.props.auth.user !== null">
 												<li><Link :href="route('dashboard.index')"><i class="fi fi-rs-user mr-10"></i>داشبورت</Link></li>
 												<li><Link :href="route('order.index')"><i class="fi fi-rs-location-alt mr-10"></i>شفارشات من</Link></li>
+<<<<<<< HEAD
 												<li><a href=""><i class="fi fi-rs-label mr-10"></i>بن تخفیف من</a></li>
 												<li><a href=""><i class="fi fi-rs-heart mr-10"></i>لیست اتخاب من</a></li>
 												<li><a href=""><i class="fi fi-rs-settings-sliders mr-10"></i>تنظیمات</a></li>
+=======
+												<li><Link :href="route('favorite.index')"><i class="fi fi-rs-heart mr-10"></i>لیست اتخاب من</Link></li>
+												<!-- <li><a href=""><i class="fi fi-rs-settings-sliders mr-10"></i>تنظیمات</a></li> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 												<li><Link :href="route('logout')" method="post" ><i class="fi fi-rs-sign-out mr-10"></i>خروج</Link></li>
 											</ul>
 										</div>
@@ -523,7 +552,14 @@ const submit = ()=>{
             <div class="container">
                 <div class="header-wrap header-space-between position-relative">
                     <div class="logo logo-width-1 d-block d-lg-none">
+<<<<<<< HEAD
                         <a href='/'><img :src="$page.props.ziggy.url +'/assets/imgs/theme/logo.svg'" alt="logo"></a>
+=======
+                        <!-- <a href='/'><img :src="$page.props.ziggy.url +'/assets/imgs/theme/logo.svg'" alt="logo"></a> -->
+                         <Link :href="route('index')"  v-if="props.companies && props.companies.image && props.companies.image.status == 4">
+                            <img :src="$page.props.ziggy.url + '/storage/' + props.companies.image.url" class="" :alt="props.companies.name_show" />
+                        </Link>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                     </div>
                     <div class="header-nav d-none d-lg-flex">
                         <!-- <div class="main-categori-wrap d-none d-lg-block">
@@ -627,6 +663,7 @@ const submit = ()=>{
                                                 <div class="menu-banner-wrap">
                                                     <a href='#'><img :src="$page.props.ziggy.url +'/assets/imgs/banner/banner-menu.png'" alt="Nest"></a>
                                                     <div class="menu-banner-content">
+<<<<<<< HEAD
                                                         <h4>Hot deals</h4>
                                                         <h3>Don't miss<br> Trending</h3>
                                                         <div class="menu-banner-price">
@@ -634,12 +671,25 @@ const submit = ()=>{
                                                         </div>
                                                         <div class="menu-banner-btn">
                                                             <a href='#'>Shop now</a>
+=======
+                                                        <h4>معاملات داغ</h4>
+                                                        <h3>از دست ندهید<br> محصولات پرطرفدار</h3>
+                                                        <div class="menu-banner-price">
+                                                            <span class="new-price text-success">تخفیفات</span>
+                                                        </div>
+                                                        <div class="menu-banner-btn">
+                                                            <a href='#'>الان بخر</a>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                                         </div>
                                                     </div>
                                                     <div class="menu-banner-discount">
                                                         <h3>
                                                             <span>25%</span>
+<<<<<<< HEAD
                                                             off
+=======
+                                                            آفر
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                                         </h3>
                                                     </div>
                                                 </div>
@@ -652,7 +702,11 @@ const submit = ()=>{
                     </div>
                     <div class="hotline d-none d-lg-flex" v-if="props.companies">
                         <img :src="$page.props.ziggy.url +'/assets/imgs/theme/icons/icon-headphone.svg'" alt="hotline">
+<<<<<<< HEAD
                         <p>{{ props.companies.phone }} + <span>مرکز پشتیبانی 24/7</span></p>
+=======
+                        <p>{{ props.companies.phone }} + <span>مرکز پشتیبانی 17/7</span></p>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                     </div>
                     <div class="header-action-icon-2 d-block d-lg-none">
                         <div class="burger-icon burger-icon-white">
@@ -663,11 +717,16 @@ const submit = ()=>{
                     </div>
                     <div class="header-action-right d-block d-lg-none">
                         <div class="header-action-2">
+<<<<<<< HEAD
                             <div class="header-action-icon-2">
+=======
+                            <!-- <div class="header-action-icon-2">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                 <a href='/shop-wishlist'>
                                     <img alt="" :src="$page.props.ziggy.url +'/assets/imgs/theme/icons/icon-heart.svg'">
                                     <span class="pro-count white">4</span>
                                 </a>
+<<<<<<< HEAD
                             </div>
                             <div class="header-action-icon-2">
                                 <a class='mini-cart-icon' href='/shop-cart'>
@@ -704,12 +763,50 @@ const submit = ()=>{
                                     <div class="shopping-cart-footer">
                                         <div class="shopping-cart-total">
                                             <h4>Total <span>$383.00</span></h4>
+=======
+                            </div> -->
+                            <div class="header-action-icon-2" >
+                                <a class='mini-cart-icon' href="#" >
+                                    <img alt="" :src="$page.props.ziggy.url +'/assets/imgs/theme/icons/icon-cart.svg'">
+                                    <span class="pro-count white" v-if="props.cart &&  props.cart.count > 0">{{ (props.cart.count).toLocaleString("fa-IR") }} </span>
+                                </a>
+                                <div class="cart-dropdown-wrap cart-dropdown-hm2">
+                                    <ul v-if="props.cart" >
+                                        <li v-for="(product,index) in props.cart.products" :key="index">
+                                            <div class="shopping-cart-img">
+                                                <a href='#'>
+                                                    <img v-if="product.product.image && product.product.image.status == 4 || 5" :alt="product.product.nam" :src="$page.props.ziggy.url+'/storage/'+product.product.image.url" />
+                                                </a>
+                                            </div>
+                                            <div class="shopping-cart-title">
+                                                <h4><Link :href="route('website_templates.show',[product.product.slug])">{{ product.product.name }}</Link></h4>
+                                                <h3><span>{{(1).toLocaleString("fa-IR")}} × </span>{{ (product.product.price).toLocaleString("fa-IR") }}</h3>
+                                            </div>
+                                            <div class="shopping-cart-delete">
+                                                <!-- <a href="#"><i class="fi-rs-cross-small"></i></a> -->
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                    <div class="shopping-cart-footer" v-if="props.cart && props.cart.total > 0">
+                                        <div class="shopping-cart-total" v-if="props.cart">
+                                            <h4>کل <span>{{ (props.cart.count).toLocaleString("fa-IR") }}</span></h4>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                         </div>
                                         <div class="shopping-cart-button">
                                             <Link :href="route('cart.index')">سبد</Link>
                                             <Link :href="route('shop-checkout.index')">تسویه</Link>
                                         </div>
                                     </div>
+<<<<<<< HEAD
+=======
+                                    <div class="shopping-cart-footer" v-else >
+
+                                        <div class="shopping-cart-button">
+                                            سبد خرید شما خالی است.
+                                        </div>
+                                    </div>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                 </div>
                             </div>
                         </div>
@@ -722,7 +819,17 @@ const submit = ()=>{
         <div class="mobile-header-wrapper-inner">
             <div class="mobile-header-top">
                 <div class="mobile-header-logo">
+<<<<<<< HEAD
                     <a href="/"><img :src="$page.props.ziggy.url +'/assets/imgs/theme/logo.svg'" alt="logo" /></a>
+=======
+                    <Link :href="route('index')"  v-if="props.companies && props.companies.image && props.companies.image.status == 4">
+                        <!-- <img :src="$page.props.ziggy.url +'/assets/imgs/theme/logo.svg'" alt="logo" /> -->
+                          <img :src="$page.props.ziggy.url + '/storage/' + props.companies.image.url" class="" :alt="props.companies.name_show" />
+                    </Link>
+                     <!-- <Link :href="route('index')"  v-if="props.companies && props.companies.image && props.companies.image.status == 4">
+                            <img :src="$page.props.ziggy.url + '/storage/' + props.companies.image.url" class="" height="40" width="60" :alt="props.companies.name_show" />
+                        </Link> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                 </div>
                 <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                     <button class="close-style search-close">
@@ -733,8 +840,13 @@ const submit = ()=>{
             </div>
             <div class="mobile-header-content-area">
                 <div class="mobile-search search-style-3 mobile-header-border">
+<<<<<<< HEAD
                     <form action="#">
                         <input type="text" placeholder="Search for items…" />
+=======
+                    <form @submit.prevent="submit" v-if="$page.props.ziggy.location == 'http://localhost:8000/website_templates'">
+                        <input v-if="$page.props.ziggy.location == 'http://localhost:8000/website_templates' " type="search" v-model="form.q"  placeholder="اسم قالب مورد نظر خود را جستجو نمایید." />
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                         <button type="submit"><i class="fi-rs-search"></i></button>
                     </form>
                 </div>
@@ -743,6 +855,7 @@ const submit = ()=>{
                     <nav>
                         <ul class="mobile-menu font-heading">
                             <li class="menu-item-has-children">
+<<<<<<< HEAD
                                 <a href="/">Home</a>
                                 <ul class="dropdown">
                                     <li><a href="/">Home 1</a></li>
@@ -785,10 +898,20 @@ const submit = ()=>{
                                             <li><a href="/shop-invoice-5">Shop Invoice 5</a></li>
                                             <li><a href="/shop-invoice-6">Shop Invoice 6</a></li>
                                         </ul>
+=======
+                                <Link :href="route('index')">صفحه اصلی</Link>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <Link :href="route('website_templates.index','q')+'all' " >محصولات</Link>
+                                <ul class="dropdown" v-if="menus" v-for="(menu,index) in menus" :key="index">
+                                    <li v-for="(men,index) in menu.children" :key="index">
+                                        <Link  :href="route('website_templates.index','type')+men.id+'#result'" >{{menu.name +' '+ men.name}}</Link>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                     </li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
+<<<<<<< HEAD
                                 <a href="#">Vendors</a>
                                 <ul class="dropdown">
                                     <li><a href="/vendors-grid">Vendors Grid</a></li>
@@ -827,10 +950,56 @@ const submit = ()=>{
                                             <li><a href="/shop-product-right">Tablets</a></li>
                                             <li><a href="/shop-product-right">Laptop Accessories</a></li>
                                             <li><a href="/shop-product-right">Tablet Accessories</a></li>
+=======
+                                <Link :href="route('website_design.index','q')+'all' ">طراح وبسایت</Link>
+                                <ul class="dropdown"  v-if="menusTarahi" v-for="(menu,index) in menusTarahi" :key="index">
+                                    <li v-for="(men,index) in menu.children" :key="index">
+                                        <Link :href="route('website_templates.index','type')+men.id+'#result'">{{menu.name +' '+ men.name}} </Link>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <Link :href="route('blog.index')">بلاگ</Link>
+                                <ul class="dropdown" v-if="menusBlog" v-for="(menu,index) in menusBlog" :key="index">
+                                    <li v-for="(men,index) in menu.children" :key="index">
+                                        <Link :href="route('blog.index','type')+menu.name+'#result'"  >{{menu.name}}</Link>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">مگا منو </a>
+                                <ul class="dropdown">
+                                    <li class="menu-item-has-children">
+                                        <a href="">محصولات</a>
+                                        <ul class="dropdown" v-if="menus" v-for="(menu,index) in menus" :key="index">
+                                            <li v-for="(men,index) in menu.children" :key="index" >
+                                                <Link :href="route('website_templates.index','type')+men.id+'#result'" >{{menu.name +' '+ men.name}}</Link>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">طراحی وسایت</a>
+                                        <ul class="dropdown" v-if="menusTarahi" v-for="(menu,index) in menusTarahi" :key="index">
+                                            <li v-for="(men,index) in menu.children" :key="index">
+                                                <Link :href="route('website_design.index','type')+men.id+'#result'"  >{{menu.name +' '+ men.name}}</Link>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">بلاگ</a>
+                                        <ul class="dropdown" v-if="menusBlog" v-for="(menu,index) in menusBlog" :key="index" >
+                                            <li>
+                                                <Link :href="route('blog.index','type')+menu.name+'#result'">{{menu.name +' '}}</Link>
+                                            </li>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
+<<<<<<< HEAD
                             <li class="menu-item-has-children">
                                 <a href="/blog-category-fullwidth">Blog</a>
                                 <ul class="dropdown">
@@ -873,11 +1042,15 @@ const submit = ()=>{
                                     <li><a href="#">Spanish</a></li>
                                 </ul>
                             </li>
+=======
+
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                         </ul>
                     </nav>
                     <!-- mobile menu end -->
                 </div>
                 <div class="mobile-header-info-wrap">
+<<<<<<< HEAD
                     <div class="single-mobile-header-info">
                         <a href="/page-contact"><i class="fi-rs-marker"></i> Our location </a>
                     </div>
@@ -897,6 +1070,29 @@ const submit = ()=>{
                     <a href="#"><img :src="$page.props.ziggy.url +'/assets/imgs/theme/icons/icon-youtube-white.svg'" alt="" /></a>
                 </div>
                 <div class="site-copyright">Copyright 2024 © Nest. All rights reserved. Powered by AliThemes.</div>
+=======
+                    <div class="single-mobile-header-info" v-if="$page.props.auth.user == null">
+                        <Link :href="route('login')"><i class="fi-rs-user"></i>ورود </Link>
+                    </div>
+                    <div class="single-mobile-header-info" v-if="props.companies && props.companies.phone" >
+                        <Link href="#"><i class="fi-rs-headphones"></i>{{ props.companies.phone }}+ </Link>
+                    </div>
+                </div>
+                <div class="mobile-social-icon mb-50">
+                    <h6 class="mb-15" v-if="props.socials">ما را دنبال کنید</h6>
+                    <template v-for="social in props.socials" :key="social.id">
+                        <a v-if="social.link"  :href="social.link"  :title="social.name" v-html="social.tag" ></a>
+                    </template>
+
+
+                    <!-- <a href="#"><img :src="$page.props.ziggy.url +'/assets/imgs/theme/icons/icon-facebook-white.svg'" alt="" /></a>
+                    <a href="#"><img :src="$page.props.ziggy.url +'/assets/imgs/theme/icons/icon-twitter-white.svg'" alt="" /></a>
+                    <a href="#"><img :src="$page.props.ziggy.url +'/assets/imgs/theme/icons/icon-instagram-white.svg'" alt="" /></a>
+                    <a href="#"><img :src="$page.props.ziggy.url +'/assets/imgs/theme/icons/icon-pinterest-white.svg'" alt="" /></a>
+                    <a href="#"><img :src="$page.props.ziggy.url +'/assets/imgs/theme/icons/icon-youtube-white.svg'" alt="" /></a> -->
+                </div>
+                <div class="site-copyright" v-if="props.companies" >©کلیه حقوق مادی و معنوی {{ props.companies.name_show }} محفوظ است.</div>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
             </div>
         </div>
     </div>

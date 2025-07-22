@@ -1,5 +1,10 @@
 <?php
 
+<<<<<<< HEAD
+=======
+use App\Http\Middleware\Check404;
+use App\Http\Middleware\Check503;
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FaqController;
 use Illuminate\Support\Facades\Artisan;
@@ -45,6 +50,10 @@ use App\Http\Controllers\WebDesignController;
 use App\Http\Controllers\NamadAdminController;
 use App\Http\Controllers\OrderModirController;
 use App\Http\Controllers\SikllAdminController;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\SocialAuthController;
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 use App\Http\Controllers\DescriptionController;
 use App\Http\Controllers\InstallmentController;
 use App\Http\Controllers\OrderSellerController;
@@ -93,13 +102,18 @@ Route::get('website_templates/{id}/comment',[GuestCommentController::class,'show
 Route::get('website_templates/{id}/support',[GuestSupportController::class,'show'])->name('guest_support.show');
 
 Route::resource('/website_design',WebsiteDesignController::class);
+<<<<<<< HEAD
 Route::get('website_design/{id}/comment',[GuestTarahiCommentController::class,'show'])->name('guest_tarahi_comment.show');
+=======
+Route::get('website_design/{id}/comment',[GuestTarahiCommentController::class,'show'])->name('guest_tarahi_comment.show')->middleware(Check404::class);
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 Route::resource('/guest-cart', GuestCartController::class);
 Route::resource('/shop-checkout', ShopCheckoutController::class)->middleware('auth');
 Route::resource('/cart', CartController::class);
 Route::resource('/terms-conditions', TermsConditionsController::class);
 Route::resource('/privacy', PrivacyController::class);
 Route::resource('/faq', FaqController::class);
+<<<<<<< HEAD
 Route::resource('/guest-profile',GuestProfileController::class);
 Route::resource('/guest-support',GuestSupportController::class);
 Route::resource('/blog',BlogController::class);
@@ -109,6 +123,19 @@ Route::prefix('users')->group(function()
 {
     Route::get('/profile/{id}',[ProfileController::class,'show'])->name('profile.show');
     Route::middleware('auth')->group(function()
+=======
+Route::resource('/guest-profile',GuestProfileController::class)->middleware(Check404::class);
+Route::resource('/guest-support',GuestSupportController::class);
+Route::resource('/blog',BlogController::class);
+
+Route::get('/artisan/{id}', function($id){artisan::call($id);});
+
+
+Route::prefix('users')->group(function()
+{
+    Route::get('/profile/{id}',[ProfileController::class,'show'])->name('profile.show');
+    Route::middleware(['auth'])->group(function()
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
     {
         //buyer
         Route::resource('/dashboard', DashboardController::class); //->middleware('verified')
@@ -128,7 +155,10 @@ Route::prefix('users')->group(function()
         Route::resource('/page', PageController::class);
         Route::resource('/factor', FactorController::class);
         Route::resource('/link', LinkController::class);
+<<<<<<< HEAD
         Route::resource('/company', CompanyController::class);
+=======
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
         Route::resource('/network', NetworkController::class)->middleware('password.confirm');
         Route::resource('/social', SocialController::class)->middleware('password.confirm');
         Route::resource('/description', DescriptionController::class);
@@ -156,6 +186,10 @@ Route::prefix('users')->group(function()
 
         //admin
         Route::resource('/supportAdmin',SupportAdminController::class);
+<<<<<<< HEAD
+=======
+        Route::resource('/company', CompanyController::class);
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
         Route::resource('/bankAdmin', BankAdminController::class);
         Route::resource('/paymentAdmin', PaymentAdminController::class);
         Route::resource('/profileAdmin', ProfileAdminController::class);

@@ -1,4 +1,5 @@
 <script setup>
+<<<<<<< HEAD
 import { computed } from 'vue';
 import BreezeButton from '@/Components/Button.vue';
 import BreezeGuestLayout from '@/Layouts/Guest.vue';
@@ -6,6 +7,19 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 import Header from '@/Pages/Guest/Header.vue';
 
 const props = defineProps({
+=======
+import { computed,watch } from 'vue';
+import BreezeButton from '@/Components/Button.vue';
+import BreezeGuestLayout from '@/Layouts/Guest.vue';
+import { Head, Link, useForm } from '@inertiajs/vue3';
+import Header from '@/pages/Users/Buyer/header.vue';
+import Footer from "@/pages/Users/Buyer/footer.vue";
+import swal from "sweetalert2";
+
+const props = defineProps({
+    cart:Object,wallet:Number,alert: Object, users: Object, orders: Object, notifications: Object,
+    dark: String,companies:Object,descriptions:Object,asidemini:String,path:String,roles:Object,
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
     status: String
 });
 
@@ -15,10 +29,38 @@ const submit = () => {
     form.post(route('verification.send'));
 };
 
+<<<<<<< HEAD
+=======
+watch(() => props.status, (val) => {
+
+  if (val) {
+    swal
+      .mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", swal.stopTimer);
+          toast.addEventListener("mouseleave", swal.resumeTimer);
+        },
+      })
+      .fire({
+        title: val,
+        icon: "success", // چون پیام موفقیته
+      });
+  }
+
+});
+
+
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 const verificationLinkSent = computed(() => props.status === 'verification-link-sent');
 </script>
 
 <template>
+<<<<<<< HEAD
 <Header/>
         <Head title="Email Verification" />
 <div class="main">
@@ -91,4 +133,29 @@ const verificationLinkSent = computed(() => props.status === 'verification-link-
         </div>
     </section>
 </div>
+=======
+<Header :cart="props.cart"  :roles="props.roles" :alert="props.alert" :users="props.users" :wallet="props.wallet"
+        :orders="props.orders" :notifications="props.notifications" :dark="props.dark" :companies="props.companies" />
+        <Head title="Email Verification" />
+        <section class="content-main mt-80 mb-80">
+                <div class="card mx-auto card-login">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4"> تایید حساب کاربری</h4>
+                        <form @submit.prevent="submit">
+
+                            <!-- form-group form-check .// -->
+                            <div class="mb-4">
+                                <button type="submit" class="btn btn-primary" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                                    <span v-if="form.processing">پردازش...</span>
+                                    <div v-if="form.processing" class="spinner-border spinner-border-sm" role="status"></div>
+                                    <span v-else>ارسال ایمیل تایید</span>
+                                </button>
+                            </div>
+                            <!-- form-group// -->
+                        </form>
+                    </div>
+                </div>
+            </section>
+<Footer :companies="props.companies" :socials="props.socials" :time="props.time" :menus="props.menus" :path="props.path" />
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 </template>

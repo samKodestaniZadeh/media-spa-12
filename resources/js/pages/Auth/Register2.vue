@@ -1,5 +1,9 @@
 <script setup>
+<<<<<<< HEAD
 import { computed, ref } from "vue";
+=======
+import { computed, ref,watch } from "vue";
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 import { Head, Link, useForm, usePage } from "@inertiajs/vue3";
 import BreezeButton from "@/Components/Button.vue";
 import BreezeInput from "@/Components/Input.vue";
@@ -30,9 +34,17 @@ const form = useForm({
 });
 
 const validateUpdate = () => {
+<<<<<<< HEAD
     Inertia.visit(route("register"), {
         only: [props.alert, errors.value, hasErrors.value],
     });
+=======
+        Inertia.visit(route("register"),
+        {
+            only: [props.alert, errors.value, hasErrors.value],
+        }
+    );
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 };
 
 const validate = (text) => {
@@ -67,22 +79,40 @@ const submit = () => {
         form.post(route("register"), {
             onFinish: () => [
                 form.reset("password", "password_confirmation"),
+<<<<<<< HEAD
                 validateUpdate(),
+=======
+                //validateUpdate(),
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
             ],
         });
     }
 };
 
+<<<<<<< HEAD
 const alert = ref(props.alert);
 
 if (alert.value) {
     swal.mixin({
         toast: true,
         position: "top-end",
+=======
+
+
+watch(() => props.alert, (val) => {
+  if (val) {
+    if (val.title) {
+      swal.fire(val.title, val.text, val.icon);
+    } else {
+      swal.mixin({
+        toast: true,
+        position: 'top-end',
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
         showConfirmButton: false,
         timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
+<<<<<<< HEAD
             toast.addEventListener("mouseenter", swal.stopTimer);
             toast.addEventListener("mouseleave", swal.resumeTimer);
         },
@@ -115,6 +145,41 @@ if (hasErrors.value == true) {
         icon: "error",
     });
 }
+=======
+          toast.addEventListener('mouseenter', swal.stopTimer);
+          toast.addEventListener('mouseleave', swal.resumeTimer);
+        }
+      }).fire({
+        title: val.text,
+        icon: val.icon,
+      });
+    }
+  }
+});
+
+watch(() => errors.value, (val) => {
+  if (val && Object.keys(val).length > 0) {
+    Object.values(val).forEach((errMsg) => {
+      swal
+        .mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", swal.stopTimer);
+            toast.addEventListener("mouseleave", swal.resumeTimer);
+          },
+        })
+        .fire({
+          title: errMsg,
+          icon: "error",
+        });
+    });
+  }
+});
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 const step = ref('step');
 const selectStep = () => {
     if (step.value == 'step') {
@@ -337,7 +402,11 @@ const selectStep = () => {
                                         </div>
                                     </div>
                                 </div>
+<<<<<<< HEAD
                                 <div class="col-lg-6 pr-30 d-none d-lg-block">
+=======
+                                <!-- <div class="col-lg-6 pr-30 d-none d-lg-block">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                     <div class="card-login mt-115">
                                         <a href="#" class="social-login facebook-login">
                                             <img src="assets/imgs/theme/icons/logo-facebook.svg" alt="" />
@@ -352,7 +421,11 @@ const selectStep = () => {
                                             <span>ادامه با اپل</span>
                                         </a>
                                     </div>
+<<<<<<< HEAD
                                 </div>
+=======
+                                </div> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                             </div>
                         </div>
                     </div>

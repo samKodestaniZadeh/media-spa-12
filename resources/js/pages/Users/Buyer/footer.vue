@@ -15,7 +15,11 @@ var full_year = now.getFullYear();
         <div class="row pb-30 pt-15 rtl">
             <div class="col-sm-6" v-if="props.companies">
 
+<<<<<<< HEAD
                 {{ moment(now).locale("fa", fa).format('jYYYY') }}-{{(1400).toLocaleString("fa-IR")}} © طراحی توسط تیم برنامه نویسی <a v-if="props.companies" :href="route('website_design.index', 'q')+'all'">{{ props.companies.name_show }}</a>
+=======
+                {{ moment(now).locale("fa", fa).format('jYYYY') }}-{{(1400).toLocaleString("fa-IR")}} © طراحی توسط  <a v-if="props.companies" :href="route('website_design.index', 'q')+'all'">{{ props.companies.name + ' '+ props.companies.lasst_name }}</a>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
             </div>
             <div class="col-sm-6">
                 <div class="text-sm-start" v-if="props.companies" >کلیه حقوق مادی و معنوی {{ props.companies.name_show }} محفوظ است.</div>

@@ -29,7 +29,11 @@ const props = defineProps({
                                             دریافت کنید</span>
                                     </span>
                                 </h2>
+<<<<<<< HEAD
                                 <p class="mb-45">
+=======
+                                <!-- <p class="mb-45">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                     <span style="vertical-align: inherit;">
                                         <span style="vertical-align: inherit;">جهت اطلاع از آخرین اخبار</span>
                                     </span><span class="text-brand">
@@ -46,9 +50,15 @@ const props = defineProps({
                                             <span style="vertical-align: inherit;">اشتراک</span>
                                         </span>
                                     </button>
+<<<<<<< HEAD
                                 </form>
                             </div>
                             <img :src="$page.props.ziggy.url+'/assets/imgs/banner/banner-9.png'" alt="خبرنامه">
+=======
+                                </form> -->
+                            </div>
+                            <!-- <img :src="$page.props.ziggy.url+'/assets/imgs/banner/banner-9.png'" alt="خبرنامه"> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                         </div>
                     </div>
                 </div>
@@ -71,7 +81,11 @@ const props = defineProps({
                                 </h3>
                                 <p>
                                     <span style="vertical-align: inherit;">
+<<<<<<< HEAD
                                         <span style="vertical-align: inherit;">سفارش 50 دلار یا بیشتر</span>
+=======
+                                        <span style="vertical-align: inherit;">اصلی و اورجینال</span>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                     </span>
                                 </p>
                             </div>
@@ -86,12 +100,20 @@ const props = defineProps({
                             <div class="banner-text">
                                 <h3 class="icon-box-title">
                                     <span style="vertical-align: inherit;">
+<<<<<<< HEAD
                                         <span style="vertical-align: inherit;">تحویل رایگان</span>
+=======
+                                        <span style="vertical-align: inherit;">فرصت های شغلی</span>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                     </span>
                                 </h3>
                                 <p>
                                     <span style="vertical-align: inherit;">
+<<<<<<< HEAD
                                         <span style="vertical-align: inherit;">خدمات شگفت انگیز 24 ساعته</span>
+=======
+                                        <span style="vertical-align: inherit;">همکاری با ما</span>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                     </span>
                                 </p>
                             </div>
@@ -106,7 +128,11 @@ const props = defineProps({
                             <div class="banner-text">
                                 <h3 class="icon-box-title">
                                     <span style="vertical-align: inherit;">
+<<<<<<< HEAD
                                         <span style="vertical-align: inherit;">معامله روزانه عالی</span>
+=======
+                                        <span style="vertical-align: inherit;">محصولات شگفت انگیز</span>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                     </span>
                                 </h3>
                                 <p>
@@ -146,18 +172,30 @@ const props = defineProps({
                             <div class="banner-text">
                                 <h3 class="icon-box-title">
                                     <span style="vertical-align: inherit;">
+<<<<<<< HEAD
                                         <span style="vertical-align: inherit;">بازگشت آسان</span>
+=======
+                                        <span style="vertical-align: inherit;">بازگشت وجه</span>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                     </span>
                                 </h3>
                                 <p>
                                     <span style="vertical-align: inherit;">
+<<<<<<< HEAD
                                         <span style="vertical-align: inherit;">طی 30 روز</span>
+=======
+                                        <span style="vertical-align: inherit;">طی 14 روز کاری</span>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                     </span>
                                 </p>
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-xl-none">
+=======
+                    <!-- <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-xl-none">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                         <div class="banner-left-icon d-flex align-items-center wow fadeIn  animated animated"
                             style="visibility: visible;">
                             <div class="banner-icon">
@@ -176,7 +214,11 @@ const props = defineProps({
                                 </p>
                             </div>
                         </div>
+<<<<<<< HEAD
                     </div>
+=======
+                    </div> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                 </div>
             </div>
         </section>
@@ -190,7 +232,11 @@ const props = defineProps({
                                     <img :src="$page.props.ziggy.url + '/storage/' + props.companies.image.url" class="" height="40" width="60" :alt="props.companies.name_show" />
                                 </Link>
                                 <p class="font-lg text-heading">
+<<<<<<< HEAD
                                     <span style="vertical-align: inherit;">
+=======
+                                    <span style="vertical-align: inherit;" v-if=" props.companies">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                         <span style="vertical-align: inherit;"> وب سایت {{ props.companies.name_show }}
                                             </span>
                                     </span>
@@ -231,7 +277,11 @@ const props = defineProps({
                                         </span>
                                     </strong><span>
                                         <span style="vertical-align: inherit;">
+<<<<<<< HEAD
                                             <span style="vertical-align: inherit;">07:00 - 24:00، شنبه الی پنچ شنبه</span>
+=======
+                                            <span style="vertical-align: inherit;">07:00 - 17:00، شنبه الی چهار شنبه</span>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                         </span>
                                     </span></li>
                             </ul>
@@ -294,6 +344,7 @@ const props = defineProps({
                                     </span>
                                 </Link></li>
 
+<<<<<<< HEAD
                             <li><a href="#">
                                     <span style="vertical-align: inherit;">
                                         <span style="vertical-align: inherit;">مقایسه محصولات</span>
@@ -302,6 +353,17 @@ const props = defineProps({
                         </ul>
                     </div>
                     <div class="footer-link-widget col">
+=======
+                            <!-- <li><a href="#">
+                                    <span style="vertical-align: inherit;">
+                                        <span style="vertical-align: inherit;">مقایسه محصولات</span>
+                                    </span>
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <!--<div class="footer-link-widget col">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                         <h4 class="widget-title">
                             <span style="vertical-align: inherit;">
                                 <span style="vertical-align: inherit;">همکاری با ما</span>
@@ -323,7 +385,11 @@ const props = defineProps({
                         </ul>
                     </div>
 
+<<<<<<< HEAD
                     <div class="footer-link-widget widget-install-app col">
+=======
+                     <div class="footer-link-widget widget-install-app col">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                         <h4 class="widget-title">
                             <span style="vertical-align: inherit;">
                                 <span style="vertical-align: inherit;">برنامه را نصب کنید</span>
@@ -347,7 +413,11 @@ const props = defineProps({
                         </p>
                         <img class="wow fadeIn animated" :src="$page.props.ziggy.url+'/assets/imgs/theme/payment-method.png'" alt=""
                             style="visibility: hidden; animation-name: none;">
+<<<<<<< HEAD
                     </div>
+=======
+                    </div> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                 </div>
             </div>
         </section>
@@ -365,7 +435,11 @@ const props = defineProps({
                                 <span style="vertical-align: inherit;"></span>
                             </span>
                         </strong>
+<<<<<<< HEAD
                         <span style="vertical-align: inherit;">
+=======
+                        <span style="vertical-align: inherit;" v-if="props.companies" >
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                             <span style="vertical-align: inherit;"> - {{ moment(time).locale("fa", fa).format('jYYYY') }} طراحی توسط {{ props.companies.name + ' ' + props.companies.lasst_name }}
                             </span>
                         </span><br>
@@ -379,7 +453,11 @@ const props = defineProps({
                         <img :src="$page.props.ziggy.url+'/assets/imgs/theme/icons/phone-call.svg'" alt="خط تلفن">
                         <p v-if="props.companies && props.companies.phone !== null">{{ props.companies.phone }}+<span>
                                 <span style="vertical-align: inherit;">
+<<<<<<< HEAD
                                     <span style="vertical-align: inherit;">ساعت کاری 7:00 الی 24:00</span>
+=======
+                                    <span style="vertical-align: inherit;">ساعت کاری 7:00 الی 17:00</span>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                 </span>
                             </span></p>
                     </div>

@@ -24,7 +24,11 @@
     },
     "dependencies": {
         "@inertiajs/inertia": "^0.11.1",
+<<<<<<< HEAD
         "@inertiajs/vue3": "^2.0.0-beta.3",
+=======
+        "@inertiajs/vue3": "^2.0.15",
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
         "@primeuix/themes": "^1.0.0",
         "@tinymce/tinymce-vue": "^6.1.0",
         "@vitejs/plugin-vue": "^5.2.1",

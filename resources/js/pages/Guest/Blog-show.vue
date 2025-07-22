@@ -9,7 +9,11 @@ import swal from 'sweetalert2';
 import ExtensionOption from '@/Components/ExtensionOptions.vue';
 import moment from "moment-jalaali";
 import fa from "moment/src/locale/fa";
+<<<<<<< HEAD
 import { Carousel, Navigation, Slide } from 'vue3-carousel'
+=======
+
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 import 'vue3-carousel/dist/carousel.css'
 import CommentReply from '@/Components/CommentReply.vue';
 import Editor from '@tinymce/tinymce-vue';

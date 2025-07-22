@@ -186,6 +186,7 @@ function toggleShowMore(event) {
                                 <div class="single-hero-slider single-animation-wrap" style="background-image: url(assets/imgs/slider/slider-3.png)">
                                     <div class="slider-content">
                                         <h1 class="display-2 mb-40">
+<<<<<<< HEAD
                                             شگفت انگیز را از دست ندهید<br />
                                             معاملات مواد غذایی
                                         </h1>
@@ -194,11 +195,24 @@ function toggleShowMore(event) {
                                             <input type="email" placeholder="آدرس ایمیل شما" />
                                             <button class="btn" type="submit">اشتراک</button>
                                         </form>
+=======
+                                            تخفیفات شگفت انگیز
+                                            <br />
+                                              را از دست ندهید
+
+                                        </h1>
+                                        <!-- <p class="mb-65">برای خبرنامه روزانه ثبت نام کنید</p>
+                                        <form class="form-subcriber d-flex">
+                                            <input type="email" placeholder="آدرس ایمیل شما" />
+                                            <button class="btn" type="submit">اشتراک</button>
+                                        </form> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                     </div>
                                 </div>
                                 <div class="single-hero-slider single-animation-wrap" style="background-image: url(assets/imgs/slider/slider-4.png)">
                                     <div class="slider-content">
                                         <h1 class="display-2 mb-40">
+<<<<<<< HEAD
                                             سبزیجات تازه<br />
                                             تخفیف بزرگ
                                         </h1>
@@ -207,6 +221,17 @@ function toggleShowMore(event) {
                                             <input type="email" placeholder="آدرس ایمیل شما" />
                                             <button class="btn" type="submit">اشتراک</button>
                                         </form>
+=======
+                                             از بن های تخفیف
+                                            <br />
+                                         روزانه استفاده نمایید
+                                        </h1>
+                                        <!-- <p class="mb-65">برای خبرنامه روزانه ثبت نام کنید</p>
+                                        <form class="form-subcriber d-flex">
+                                            <input type="email" placeholder="آدرس ایمیل شما" />
+                                            <button class="btn" type="submit">اشتراک</button>
+                                        </form> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                     </div>
                                 </div>
                             </div>
@@ -214,7 +239,11 @@ function toggleShowMore(event) {
                         </div>
                     </section>
                     <!--End hero-->
+<<<<<<< HEAD
                     <section class="product-tabs section-padding position-relative">
+=======
+                    <section class="product-tabs section-padding position-relative"  v-if="props.results && props.results.total > 0">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                         <div class="section-title style-2">
                             <h3>محصولات</h3>
                             <ul class="nav nav-tabs links" id="myTab" role="tablist">

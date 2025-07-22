@@ -100,7 +100,11 @@ if (alert.value) {
                                             </div>
                                             <form method="post" @submit.prevent="submit">
                                                 <div class="form-group">
+<<<<<<< HEAD
                                                     <input type="text" required="" name="email" placeholder="Email Or UserName Or Mobile"  v-model="form.email" autocomplete="username" />
+=======
+                                                    <input type="text" required="" name="email" placeholder="ایمیل یا تلفن همراه یا نام کاربری"  v-model="form.email" autocomplete="username" />
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                                 </div>
                                                 <div class="form-group">
                                                     <input required="" type="password" name="password" placeholder="Your password *" v-model="form.password" autocomplete="current-password" />
@@ -136,13 +140,21 @@ if (alert.value) {
                                         </div>
                                     </div>
                                 </div>
+<<<<<<< HEAD
                                 <div class="col-lg-6 pr-30 d-none d-lg-block">
+=======
+                                <!-- <div class="col-lg-6 pr-30 d-none d-lg-block">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                     <div class="card-login mt-115">
                                         <a href="#" class="social-login facebook-login">
                                             <img src="assets/imgs/theme/icons/logo-facebook.svg" alt="" />
                                             <span>ادامه با فیس بوک</span>
                                         </a>
+<<<<<<< HEAD
                                         <a href="#" class="social-login google-login">
+=======
+                                        <a href="/auth/google" class="social-login google-login">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                             <img src="assets/imgs/theme/icons/logo-google.svg" alt="" />
                                             <span>ادامه با جیمیل</span>
                                         </a>
@@ -151,7 +163,11 @@ if (alert.value) {
                                             <span>ادامه با اپل</span>
                                         </a>
                                     </div>
+<<<<<<< HEAD
                                 </div>
+=======
+                                </div> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                             </div>
                         </div>
                     </div>

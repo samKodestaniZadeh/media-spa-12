@@ -1,5 +1,6 @@
 <script setup>
 
+<<<<<<< HEAD
 import { computed,ref} from 'vue';
 import { Head, Link, useForm , usePage} from '@inertiajs/vue3';
 import Header from '@/Pages/Users/Buyer/header.vue';
@@ -19,6 +20,21 @@ const props = defineProps({
     auth:Object,canResetPassword: Boolean,status: String,users:Object,ostans:Object,shahrs:Object,
     notifications:Object,companies:Object,descriptions:Object,alert:Object,now:String,wallet:Number,
     cart:Object
+=======
+import { ref} from 'vue';
+import {  useForm } from '@inertiajs/vue3';
+import Header from '@/Pages/Users/Buyer/header.vue';
+import Footer from '@/Pages/Users/Buyer/footer.vue';
+import DatePicker from 'vue3-persian-datetime-picker';
+import Aside from '@/Components/Aside.vue';
+import swal from 'sweetalert2';
+
+
+const props = defineProps({
+    auth:Object,canResetPassword: Boolean,status: String,users:Object,ostans:Object,shahrs:Object,
+    notifications:Object,companies:Object,descriptions:Object,alert:Object,now:String,wallet:Number,
+    cart:Object,
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 });
 
 var now =  props.now;
@@ -30,11 +46,22 @@ const form =  useForm({
     lasst_name:props.users?props.users.lasst_name:null,
     birth:props.users.profile?props.users.profile.birth:null,
     gender:props.users.profile?props.users.profile.gender:null,
+<<<<<<< HEAD
     file:props.users.identity && props.users.identity.file? props.users.identity.file.url:null,
+=======
+    ostan:props.users.profile?props.users.profile.ostan : null,
+    shahr:props.users.profile?props.users.profile.shahr : null,
+    biography:props.users.profile?props.users.profile.biography : null,
+    file:props.users.identity && props.users.identity.file ? props.users.identity.file.url:null,
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
     identity:props.users.identity?props.users.identity.id:null,
     national_id:props.users.identity?props.users.identity.national_id:null,
     economical_number:props.users.identity?props.users.identity.economical_number:null,
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 });
 
 const validate = (text)=>{
@@ -53,6 +80,7 @@ const validate = (text)=>{
     })
 }
 
+<<<<<<< HEAD
 const alert = ref(props.alert);
 
 if (alert.value) {
@@ -96,12 +124,16 @@ if (hasErrors.value == true) {
 const submitTime = ()=>{
     Inertia.visit(route('identity.index'),{ only: [errors.value,hasErrors.value,props.alert] })
 }
+=======
+
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 
 const submit = () =>{
 
     if (
 
             form.birth && form.file  && form.lasst_name  && form.name && form.economical_number && form.national_id
+<<<<<<< HEAD
             || form.gender && form.national_code && form.birth && form.file  && form.lasst_name  && form.name
         )
         {
@@ -109,6 +141,17 @@ const submit = () =>{
             form.post(route('identity.store'),{
                     onFinish:() => submitTime()
                 });
+=======
+            || form.gender && form.national_code && form.birth && form.file   && form.name
+        )
+        {
+
+            form.post(route('identity.store'),
+                // {
+                //     onFinish:() => submitTime()
+                // }
+            );
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
         }
         else
         {
@@ -120,6 +163,19 @@ const submit = () =>{
 
 };
 
+<<<<<<< HEAD
+=======
+const ostans = ref(props.ostans);
+const shahrs = ref();
+
+const change = () => {
+
+    if (props.shahrs == form.ostan) {
+        shahrs.value = props.shahrs
+    }
+
+};
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 </script>
 <template>
 <Header :cart="props.cart" :cartCount="props.cartCount" :cartDiscount="props.cartDiscount" :wallet="props.wallet"
@@ -163,6 +219,7 @@ const submit = () =>{
                                             <div class="col-lg-8">
                                                 <div class="row gx-3" v-if="props.users.person == 0">
                                                     <div class="col-12 mb-3">
+<<<<<<< HEAD
                                                         <label class="form-label">کد ملی</label>
                                                         <input  v-model.number.lazy="form.national_code" class="form-control" type="text" placeholder="اینجا تایپ کنید" />
                                                     </div>
@@ -180,11 +237,62 @@ const submit = () =>{
                                                     </div>
                                                     <div class="col-lg-6 mb-3">
                                                         <label for="gender" class="form-label">جنسیت</label>
+=======
+                                                        <label class="form-label">کد ملی<span class="text-danger">*</span></label>
+                                                        <input  v-model.number.lazy="form.national_code" class="form-control" type="text" placeholder="اینجا تایپ کنید" />
+                                                    </div>
+                                                    <div class="col-lg-6 mb-3">
+                                                        <label class="form-label">نام<span class="text-danger">*</span></label>
+                                                        <input  v-model.lazy="form.name" class="form-control" type="text" placeholder="اینجا تایپ کنید" name="name" autocomplete="name" />
+                                                    </div>
+                                                    <div class="col-lg-6 mb-3">
+                                                        <label class="form-label">نام خانوادگی<span class="text-danger">*</span></label>
+                                                        <input  v-model.lazy="form.lasst_name" class="form-control" type="text" placeholder="اینجا تایپ کنید" name="name" autocomplete="name" />
+                                                    </div>
+                                                    <div class="col-lg-6 mb-3">
+                                                        <label class="form-label">تولد<span class="text-danger">*</span></label>
+                                                        <date-picker v-model.lazy="form.birth" color="#1ABC9C" :max="now" type="date" ></date-picker>
+                                                    </div>
+                                                    <div class="col-lg-6 mb-3">
+                                                        <label for="gender" class="form-label">جنسیت<span class="text-danger">*</span></label>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                                         <select  v-model.lazy="form.gender" class="form-select" name="gender" id="gender">
                                                             <option >خانم</option>
                                                             <option >آقا</option>
                                                         </select>
                                                     </div>
+<<<<<<< HEAD
+=======
+                                                    <div class="col-lg-12">
+                                                        <div class="row  gx-2">
+                                                            <div class="col-lg-6">
+                                                                <div class="mt-4">
+                                                                    <label for="" class="form-label">استان</label>
+                                                                    <select v-model.lazy="form.ostan" @change="change" class="form-select" name="" id="">
+                                                                        <option v-for="(ostan,index ) in ostans" :key="index" v-if="ostans.length > 0">{{ostan}}</option>
+                                                                        <option v-else disabled>گزینه ای یافت نشد.</option>
+
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6" v-if="form.ostan">
+                                                                <div class="mt-4">
+                                                                    <label for="" class="form-label">شهر</label>
+                                                                    <select v-model.lazy="form.shahr" class="form-select" name="" id="">
+                                                                        <template v-for="(shahr,index1 ) in props.shahrs" :key="index1">
+                                                                            <option v-for="(shahrs,index ) in shahr" :key="index" v-if="index1 == form.ostan">{{shahrs}}</option>
+                                                                        </template>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 mb-3">
+                                                        <label class="form-label">نشانی</label>
+                                                        <!-- <input v-model.lazy.trim="form.address" class="form-control" type="text" placeholder="اینجا تایپ کنید"> -->
+                                                        <textarea v-model.lazy.trim="form.address" placeholder="اینجا تایپ کنید" class="form-control" rows="4"></textarea>
+                                                    </div>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                                 </div>
                                                 <div class="row gx-3" v-else-if="props.users.person == 1">
                                                     <div class="col-6 mb-3">
@@ -219,7 +327,13 @@ const submit = () =>{
 
                                             <aside class="col-lg-4">
                                                 <figure class="text-lg-center">
+<<<<<<< HEAD
                                                    <img :src="$page.props.ziggy.url+'/assets/imgs/theme/upload.svg'" alt="national code Photo" />
+=======
+                                                    <label class="form-label">فایل<span class="text-danger">*</span></label>
+                                                    <img v-if="form.file" :src="$page.props.ziggy.url+'/storage/'+ props.users.identity.file.url" alt="national code Photo" />
+                                                    <img v-else :src="$page.props.ziggy.url+'/assets/backend/assets/imgs/theme/upload.svg'" alt="national code Photo" />
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                                     <input  class="form-control" type="file" @input="form.file = $event.target.files[0]"  id="file"  accept="zip/rar/*"/>
                                                     <progress v-if="form.progress" :value="form.progress.percentage" max="5">
                                                         {{ form.progress.percentage }}%

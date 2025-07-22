@@ -17,7 +17,11 @@ class CreateProfilesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+<<<<<<< HEAD
             $table->bigInteger('wallet')->default(0);
+=======
+            // $table->bigInteger('wallet')->default(0);
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
             $table->string('ostan')->nullable();
             $table->string('shahr')->nullable();
             $table->string('address')->nullable();

@@ -4,7 +4,10 @@ import { computed, ref,watch,onMounted } from 'vue';
 import Footer from './Footer2.vue';
 import Header from './Header2.vue';
 import Seo from '@/Components/Seo.vue';
+<<<<<<< HEAD
 import { Inertia } from '@inertiajs/inertia';
+=======
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 import { Head,useForm, usePage,router,Link } from '@inertiajs/vue3';
 import swal from 'sweetalert2';
 
@@ -59,6 +62,31 @@ watch(() => props.alert, (val) => {
   }
 });
 
+<<<<<<< HEAD
+=======
+watch(() => errors.value, (val) => {
+  if (val && Object.keys(val).length > 0) {
+    Object.values(val).forEach((errMsg) => {
+      swal
+        .mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", swal.stopTimer);
+            toast.addEventListener("mouseleave", swal.resumeTimer);
+          },
+        })
+        .fire({
+          title: errMsg,
+          icon: "error",
+        });
+    });
+  }
+});
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 
 if (hasErrors.value == true) {
     swal.mixin({
@@ -194,15 +222,30 @@ if (props.discounts.data) {
     });
 
 }
+<<<<<<< HEAD
 
 </script>
 <template>
     <Seo />
+=======
+const titleSeo = 'بزرگترین مرجع طراحی سایت و قالب در ایران';
+const descriptionSeo = 'خلاصه‌ای از محتوای صفحه برای نمایش در گوگل.';
+const keywordsSeo ='گوگل دیگه ازش استفاده نمی‌کنه، ولی بعضی موتورهای داخلی ممکنه هنوز بخوننش';
+const robotsSeo = 'ه موتور جستجو می‌گه آیا این صفحه ایندکس بشه یا نه.';
+</script>
+<template>
+    <Seo  :title="titleSeo" :description="descriptionSeo" :keywords="keywordsSeo" :robots="robotsSeo" />
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
     <Head title="index" />
     <Header :companies="props.companies" :results="props.results" :Quickview="Quickview" :menus="props.menus" :cart="props.cart" :menu="props.menu"
         @event-submit-quickview="submitQuickview"  @event-submit-cart="submitCart"
      />
+<<<<<<< HEAD
 
+=======
+    <!-- <p v-if="typeof window === 'undefined'">✅ SSR رندر شد (سمت سرور)</p>
+    <p v-else>👀 این فقط در مرورگر دیده میشه</p> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
     <!--End header-->
     <main class="main">
         <section class="home-slider position-relative mb-30">
@@ -215,11 +258,19 @@ if (props.discounts.data) {
                                     محصولات شگفت <br />
                                     انگیز را از دست ندهید
                                 </h1>
+<<<<<<< HEAD
                                 <p class="mb-65">جهت اطلاع از آخرین اخباردر خبرنامه ثبت نام کنید</p>
                                 <form class="form-subcriber d-flex">
                                     <input type="email" placeholder="آدرس ایمیل شما" />
                                     <button class="btn" type="submit">اشتراک</button>
                                 </form>
+=======
+                                <!-- <p class="mb-65">جهت اطلاع از آخرین اخباردر خبرنامه ثبت نام کنید</p>
+                                <form class="form-subcriber d-flex">
+                                    <input type="email" placeholder="آدرس ایمیل شما" />
+                                    <button class="btn" type="submit">اشتراک</button>
+                                </form> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                             </div>
                         </div>
                         <div class="single-hero-slider single-animation-wrap" style="background-image: url(assets/imgs/slider/slider-2.png)">
@@ -228,11 +279,19 @@ if (props.discounts.data) {
                                     طرح تخفیف<br />
                                     روزانه را از دست ندهید
                                 </h1>
+<<<<<<< HEAD
                                 <p class="mb-65">جهت اطلاع از آخرین اخباردر خبرنامه ثبت نام کنید</p>
                                 <form class="form-subcriber d-flex">
                                     <input type="email" placeholder="آدرس ایمیل شما" />
                                     <button class="btn" type="submit">اشتراک</button>
                                 </form>
+=======
+                                <!-- <p class="mb-65">جهت اطلاع از آخرین اخباردر خبرنامه ثبت نام کنید</p>
+                                <form class="form-subcriber d-flex">
+                                    <input type="email" placeholder="آدرس ایمیل شما" />
+                                    <button class="btn" type="submit">اشتراک</button>
+                                </form> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                             </div>
                         </div>
                     </div>
@@ -241,7 +300,11 @@ if (props.discounts.data) {
             </div>
         </section>
         <!--End hero slider-->
+<<<<<<< HEAD
         <section class="product-tabs section-padding position-relative">
+=======
+        <section class="product-tabs section-padding position-relative" v-if="props.results.length > 0">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
             <div class="container">
                 <div class="section-title style-2 wow animate__animated animate__fadeIn">
                     <h3>محصول </h3>
@@ -253,7 +316,11 @@ if (props.discounts.data) {
                     </ul>
                 </div>
                 <!--End nav-tabs-->
+<<<<<<< HEAD
                 <div class="tab-content" id="myTabContent">
+=======
+                <div class="tab-content" id="myTabContent" >
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                     <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
                         <div class="row product-grid-4" v-if="props.results">
                             <div class="col-lg-1-5 col-md-4 col-12 col-sm-6"  v-for="(result ,index) in props.results" :key="index">
@@ -298,7 +365,11 @@ if (props.discounts.data) {
                                             <span class="font-small ml-5 text-muted" v-else > (0.000)</span>
                                         </div>
                                         <div>
+<<<<<<< HEAD
                                             <span class="font-small text-muted">فروشنده <Link href="">({{ result.user.name_show }})</Link></span>
+=======
+                                            <span class="font-small text-muted">فروشنده <Link :href="route('guest-profile.show', result.user.user_name)">({{ result.user.name_show }})</Link></span>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                         </div>
                                         <div class="product-card-bottom" >
                                             <div class="product-price" v-if="result.discount">
@@ -326,7 +397,11 @@ if (props.discounts.data) {
             </div>
         </section>
         <!--Products Tabs-->
+<<<<<<< HEAD
         <section class="section-padding pb-5">
+=======
+        <section class="section-padding pb-5" v-if="props.webDesigns.length > 0">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                 <div class="container">
                     <div class="section-title wow animate__animated animate__fadeIn" data-wow-delay="0">
                         <h3 class="">پروژه</h3>
@@ -359,7 +434,11 @@ if (props.discounts.data) {
                                             <span class="font-small ml-5 text-muted" v-else > (0.000)</span>
                                         </div>
                                         <div>
+<<<<<<< HEAD
                                             <span class="font-small text-muted">کارفرما <Link href="">({{ result.user.name_show }})</Link></span>
+=======
+                                            <span class="font-small text-muted">کارفرما <Link :href="route('guest-profile.show', result.user.user_name)">({{ result.user.name_show }})</Link></span>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                         </div>
                                         <div class="product-card-bottom">
                                             <div class="product-price"  v-if="result.discount">
@@ -383,7 +462,11 @@ if (props.discounts.data) {
             </section>
         <!--Products Tabs-->
         <!--End hero slider-->
+<<<<<<< HEAD
         <section class="product-tabs section-padding position-relative">
+=======
+        <section class="product-tabs section-padding position-relative" v-if="props.blogs.length > 0">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
             <div class="container">
                 <div class="section-title style-2 wow animate__animated animate__fadeIn">
                     <h3>وبلاگ  </h3>
@@ -395,9 +478,15 @@ if (props.discounts.data) {
                     </ul>
                 </div>
                 <!--End nav-tabs-->
+<<<<<<< HEAD
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
                         <div class="row product-grid-4" v-if="props.blogs">
+=======
+                <div class="tab-content" id="myTabContent" >
+                    <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
+                        <div class="row product-grid-4">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                             <div class="col-lg-1-5 col-md-4 col-12 col-sm-6"  v-for="(result ,index) in props.blogs" :key="index">
                                 <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".1s"  >
                                     <div class="product-img-action-wrap">
@@ -434,7 +523,11 @@ if (props.discounts.data) {
                                             <span class="font-small ml-5 text-muted" v-else > (0.000)</span>
                                         </div>
                                         <div>
+<<<<<<< HEAD
                                             <span class="font-small text-muted">نویسنده <a href="">({{ result.user.name_show }})</a></span>
+=======
+                                            <span class="font-small text-muted">نویسنده <Link :href="route('guest-profile.show', result.user.user_name)">({{ result.user.name_show }})</Link></span>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                         </div>
                                         <div class="product-card-bottom" >
                                             <div class="product-price" v-if="result.discount">

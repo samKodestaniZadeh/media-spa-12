@@ -39,7 +39,11 @@ const form =  useForm({name:null,lasst_name:null,email:null,tel:null,date:null,t
                                                 <span class="post-by">توسط <Link :href="route('profile.show',[props.pages.user.user_name])">{{ props.pages.user.name_show }}</Link></span>
                                                 <span class="post-on has-dot">تاریخ {{ moment(props.pages.created_at).locale("fa", fa).format('jYYYY/jM/jD') }}</span>
                                                 <span class="post-on has-dot">بروزرسانی {{ moment(props.pages.updated_at).locale("fa", fa).format('jYYYY/jM/jD') }}</span>
+<<<<<<< HEAD
                                                 <span class="time-reading has-dot">زمان مطالعه {{ (10).toLocaleString("fa-IR") }} دقیقه</span>
+=======
+                                                <!-- <span class="time-reading has-dot">زمان مطالعه {{ (10).toLocaleString("fa-IR") }} دقیقه</span> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                                 <!-- <span class="hit-count has-dot">29k Views</span> -->
                                             </div>
                                         </div>

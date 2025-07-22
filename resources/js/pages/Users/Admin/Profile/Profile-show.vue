@@ -74,9 +74,17 @@ const submitTime = ()=>{
 }
 
 const submit = () =>{
+<<<<<<< HEAD
     form.post(route('profileAdmin.store'),{
         onFinish:() => submitTime()
     })
+=======
+    form.post(route('profileAdmin.store'),
+    // {
+    //     onFinish:() => submitTime()
+    // }
+    )
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 };
 
 const ostans = ref(props.ostans);
@@ -147,6 +155,17 @@ const change = () =>{
                                                         <label class="form-label">نام نمایشی</label>
                                                         <input  v-model.lazy="form.name_show" class="form-control" type="text" placeholder="اینجا تایپ کنید" name="name_show" autocomplete="name_show" />
                                                     </div>
+<<<<<<< HEAD
+=======
+                                                    <div class="col-lg-6 mb-3">
+                                                        <label class="form-label">ایمیل</label>
+                                                        <input  v-model.lazy="form.email" class="form-control" type="text" placeholder="اینجا تایپ کنید" name="name_show" autocomplete="name_show" />
+                                                    </div>
+                                                    <div class="col-lg-6 mb-3">
+                                                        <label class="form-label">تلفن</label>
+                                                        <input  v-model.lazy="form.tel" class="form-control" type="text" placeholder="اینجا تایپ کنید" name="name_show" autocomplete="name_show" />
+                                                    </div>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                                     <div class="col-lg-6">
                                                         <label for="biography" class="form-label">بیوگرافی</label>
                                                         <textarea v-model.lazy="form.biography" class="bg-light" name="" id="" cols="55" rows="7"

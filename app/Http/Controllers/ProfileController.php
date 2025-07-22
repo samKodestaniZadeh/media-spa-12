@@ -78,7 +78,11 @@ class ProfileController extends Controller
     public function store(Request $request,User $user,Profile $profile,Role $role,Company $company)
     {
 
+<<<<<<< HEAD
          $image = $user->find(auth()->user()->id)->image  && $request->image !== $user->find(auth()->user()->id)->image ? $user->find(auth()->user()->id)->image->url:null;
+=======
+         $image = $user->find(auth()->user()->id)->image  && $request->image === $user->find(auth()->user()->id)->image->url ? $user->find(auth()->user()->id)->image->url:null;
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 
         if($request->tel)
         {
@@ -202,11 +206,19 @@ class ProfileController extends Controller
             // dd($request);
             $request->validate([
                 'name_show'=>'required',
+<<<<<<< HEAD
+=======
+                'phone'=>'numeric',
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
             ]);
 
             $user->find(auth()->user()->id)->update([
 
                 'name_show' => $request->name_show,
+<<<<<<< HEAD
+=======
+                'phone' => $request->phone
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
             ]);
 
             $profiles = $user->find(auth()->user()->id)->profile;

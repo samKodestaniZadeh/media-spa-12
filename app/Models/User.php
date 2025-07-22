@@ -37,6 +37,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'lasst_name',
         'name_show',
         'tel',
+<<<<<<< HEAD
+=======
+        'phone',
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
         'email',
         'password',
         'status',

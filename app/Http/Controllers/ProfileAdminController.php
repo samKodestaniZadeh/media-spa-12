@@ -128,6 +128,11 @@ class ProfileAdminController extends Controller
                     'name_show' => $request->name_show,
                     'lasst_name' => $request->lasst_name,
                     'national_code' => $request->national_code,
+<<<<<<< HEAD
+=======
+                    'email' => $request->email,
+                    'tel' => $request->tel
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                 ]);
 
                 $request->session()->flash(

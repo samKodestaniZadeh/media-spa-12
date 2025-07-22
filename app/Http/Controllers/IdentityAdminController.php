@@ -11,6 +11,11 @@ use App\Models\Company;
 use App\Models\Identity;
 use App\Jobs\IdentityJob;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
+=======
+use App\Http\Utilities\Ostan;
+use App\Http\Utilities\Shahr;
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 use App\Http\Utilities\Wallet;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -97,6 +102,11 @@ class IdentityAdminController extends Controller
             $oldCart = $request->session()->has('cart') ? $request->session()->get('cart'):null;
             $cart = new Cart($oldCart);
             $time = new Carbon();
+<<<<<<< HEAD
+=======
+            $ostans = Ostan::all();
+            $shahrs = Shahr::all();
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
             $user = $user->with('image')->with('identity')->with('profile')->with('roles')->find($id);
             $users = $user->with('image')->with('identity')->with('profile')->with('roles')->findOrfail(auth()->user()->id);
             $id=$request->query();
@@ -108,7 +118,11 @@ class IdentityAdminController extends Controller
             $wallet = Wallet::all($users);
 
             return Inertia::render('Users/Admin/Profile/Identityuser-show',['cart'=>[ 'products' => $cart->products,'count' => $cart->count,'price' => $cart->price,'discount'=> $cart->discount,'coupon' => $cart->coupon,'total' => $cart->total,
+<<<<<<< HEAD
             'tax'=> $cart->tax,'col'=>$cart->col,'payment'=>$cart->payment,'balance'=>$cart->balance],
+=======
+            'tax'=> $cart->tax,'col'=>$cart->col,'payment'=>$cart->payment,'balance'=>$cart->balance],'ostans'=>$ostans,'shahrs'=>$shahrs,
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
             'users' => $users,'notifications'=> $notifications,'orders_count'=>$user->orders->count(),'companies' => $companies,'cartComison' => $cart->comison,
                 'descriptions'=>$descriptions,'alert' => $alert,'user' => $user, 'time' => $time,'wallet'=>$wallet
             ]);

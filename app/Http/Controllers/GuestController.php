@@ -19,6 +19,7 @@ use App\Models\Product;
 use App\Models\Profile;
 use App\Models\Session;
 use App\Models\Support;
+<<<<<<< HEAD
 use App\Models\Discount;
 use App\Models\Orderable;
 use App\Models\WebDesign;
@@ -28,6 +29,21 @@ use Illuminate\Http\Request;
 use App\Notifications\SupportNotif;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+=======
+use App\Jobs\DepositJob;
+use App\Models\Discount;
+use App\Models\Orderable;
+// use Illuminate\Support\Facades\Route;
+use App\Models\WebDesign;
+use App\Models\RouteModel;
+use Illuminate\Http\Request;
+use Shetabit\Multipay\Invoice;
+use App\Notifications\SupportNotif;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Shetabit\Payment\Facade\Payment;
+use App\Http\Utilities\DepositCreate;
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 use Illuminate\Foundation\Application;
 use App\Notifications\SupportNotification;
 use Illuminate\Support\Facades\Notification;
@@ -66,9 +82,16 @@ class GuestController extends Controller
             ->having('occurences', '>', 0)->orderByDesc('occurences')->limit(5)->get();
         $webDesigns = $tarahi->with('discount')->with('user')->with('menus')->where([['status',4],['company_id',null]])->withCount('offers')->withCount('comments')->limit(4)->get();
         $blogs = $blog->with('image')->with('group')->with('type')->with('category')->withCount('comments')->with('user')->with('menus')->withCount('views')->where('status',4)->limit(5)->get();
+<<<<<<< HEAD
         if($companies)
         {
             // dd($menus);
+=======
+
+        if($companies)
+        {
+            // dd($results);
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
             return Inertia::render('Guest/index', ['canLogin' => 'Illuminate\Support\Facades\Route'::has('login'),
                 'canRegister' => 'Illuminate\Support\Facades\Route'::has('register'),'laravelVersion' => Application::VERSION,
                 'phpVersion' => PHP_VERSION, 'alert' => $alert,'discounts' => $discounts, 'time' => $time, 'menus' => $menus, 'menu' => $menu,

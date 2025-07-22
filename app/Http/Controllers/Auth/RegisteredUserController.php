@@ -87,7 +87,11 @@ class RegisteredUserController extends Controller
 
                     if ($users && $identitys) {
 
+<<<<<<< HEAD
                         $profiles = ProfileCreate::all($request,$users);
+=======
+                        $profiles = ProfileCreate::create($users);
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                         if ($profiles) {
 
                             event(new Registered($users));

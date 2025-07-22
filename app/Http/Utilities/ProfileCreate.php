@@ -46,4 +46,20 @@ class ProfileCreate
         return $profiles;
 
     }
+<<<<<<< HEAD
+=======
+    public static function create($users)
+    {
+
+       $profiles = Profile::Create([
+                'user_id' => $users->id,
+                'notification'=>1
+
+            ]);
+
+        return $profiles;
+
+    }
+
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 }

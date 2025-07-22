@@ -526,7 +526,11 @@ onBeforeUnmount(() => {
                     </li>
                     <li class="dropdown nav-item">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount" aria-expanded="false">
+<<<<<<< HEAD
                             <img v-if="props.users.profile && props.users.profile.image && props.users.profile.image.status == 4" style="height:40px" class="img-xs rounded-circle" :src="$page.props.ziggy.url+'/storage/'+ props.users.profile.image.url" :alt="props.users.show_name" />
+=======
+                            <img v-if="props.users.image && props.users.profile && props.users.image.status == 4 && props.users.profile.status == 4" style="height:40px" class="img-xs rounded-circle" :src="$page.props.ziggy.url+'/storage/'+ props.users.image.url" :alt="props.users.show_name" />
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                             <img v-else style="height:40px" class="img-xs rounded-circle" :src="$page.props.ziggy.url+'/storage/images/default-user.png'" :alt="props.users.show_name" />
                         </a>
                         <div style="left:0px;text-align:right;" class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownAccount">

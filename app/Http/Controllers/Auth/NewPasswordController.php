@@ -34,6 +34,10 @@ class NewPasswordController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+<<<<<<< HEAD
+=======
+        // dd($request->only('email', 'password', 'password_confirmation', 'token'));
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
         $request->validate([
             'token' => 'required',
             'email' => 'required|email',

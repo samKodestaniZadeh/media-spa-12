@@ -9,9 +9,15 @@ import moment from "moment-jalaali";
 import fa from "moment/src/locale/fa";
 import Editor from '@tinymce/tinymce-vue';
 import { Inertia } from '@inertiajs/inertia';
+<<<<<<< HEAD
 import { Carousel, Navigation, Slide } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 import StarRating from 'vue3-star-ratings';
+=======
+
+import 'vue3-carousel/dist/carousel.css'
+
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 import {Countdown} from 'vue3-flip-countdown';
 
 const errors = computed(() => usePage().props.errors);
@@ -340,6 +346,7 @@ function toggleShowMore(event) {
                                 <div class="single-hero-slider single-animation-wrap" style="background-image: url(assets/imgs/slider/slider-3.png)">
                                     <div class="slider-content">
                                         <h1 class="display-2 mb-40">
+<<<<<<< HEAD
                                             شگفت انگیز را از دست ندهید<br />
                                             معاملات مواد غذایی
                                         </h1>
@@ -348,11 +355,24 @@ function toggleShowMore(event) {
                                             <input type="email" placeholder="آدرس ایمیل شما" />
                                             <button class="btn" type="submit">اشتراک</button>
                                         </form>
+=======
+                                             تخفیفات شگفت انگیز
+                                            <br />
+                                              را از دست ندهید
+
+                                        </h1>
+                                        <!-- <p class="mb-65">برای خبرنامه روزانه ثبت نام کنید</p>
+                                        <form class="form-subcriber d-flex">
+                                            <input type="email" placeholder="آدرس ایمیل شما" />
+                                            <button class="btn" type="submit">اشتراک</button>
+                                        </form> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                     </div>
                                 </div>
                                 <div class="single-hero-slider single-animation-wrap" style="background-image: url(assets/imgs/slider/slider-4.png)">
                                     <div class="slider-content">
                                         <h1 class="display-2 mb-40">
+<<<<<<< HEAD
                                             سبزیجات تازه<br />
                                             تخفیف بزرگ
                                         </h1>
@@ -361,6 +381,17 @@ function toggleShowMore(event) {
                                             <input type="email" placeholder="آدرس ایمیل شما" />
                                             <button class="btn" type="submit">اشتراک</button>
                                         </form>
+=======
+                                             از بن های تخفیف
+                                            <br />
+                                         روزانه استفاده نمایید
+                                        </h1>
+                                        <!-- <p class="mb-65">برای خبرنامه روزانه ثبت نام کنید</p>
+                                        <form class="form-subcriber d-flex">
+                                            <input type="email" placeholder="آدرس ایمیل شما" />
+                                            <button class="btn" type="submit">اشتراک</button>
+                                        </form> -->
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                                     </div>
                                 </div>
                             </div>
@@ -371,7 +402,11 @@ function toggleShowMore(event) {
                     <!--Products Tabs-->
 
                         <!--End Deals-->
+<<<<<<< HEAD
                     <section class="product-tabs section-padding position-relative">
+=======
+                    <section class="product-tabs section-padding position-relative" v-if="props.results && props.results.total > 0">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                         <div class="section-title style-2">
                             <h3>پروژها</h3>
                             <ul class="nav nav-tabs links" id="myTab" role="tablist">
@@ -437,7 +472,11 @@ function toggleShowMore(event) {
                         </div>
                         <!--End nav-tabs-->
 
+<<<<<<< HEAD
                         <div class="tab-content" id="myTabContent" v-if="props.results && props.results.total > 0">
+=======
+                        <div class="tab-content" id="myTabContent" >
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                             <div class="tab-pane fade show active" >
                                 <div class="row">
                                 <div class="col-xl-3 col-lg-4 col-md-6" v-for="(result ,index) in props.results.data" :key="index">
@@ -604,6 +643,7 @@ function toggleShowMore(event) {
                             </nav>
                         </div>
                         <!--end product card-->
+<<<<<<< HEAD
                         <section id="contact" class="contact-us ptb-100">
         <div class="container">
             <div class="row">
@@ -747,6 +787,152 @@ function toggleShowMore(event) {
                     <!--Products Tabs-->
 
 
+=======
+
+                    </section>
+                    <!--Products Tabs-->
+                    <section class="product-tabs section-padding position-relative">
+                        <section id="contact" class="contact-us ptb-100">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 pb-3 message-box d-none">
+                                            <div class="alert alert-danger"></div>
+                                        </div>
+
+                                        <div class="col-md-7" id="web">
+                                            <form>
+                                                <h5>ثبت سفارش طراحی وبسایت</h5>
+                                                <div class="row" v-if="form.entekhab == 0 || props.companies && form.entekhab == props.companies.id">
+                                                    <div class="col-sm-6 col-12" v-if="$page.props.auth.user == null">
+                                                        <div class="form-group">
+                                                            <input v-model.lazy="form.name" type="text" class="form-control" placeholder="نام"
+                                                                required="required">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12" v-if="$page.props.auth.user == null">
+                                                        <div class="form-group">
+                                                            <input v-model.lazy="form.lasst_name" type="text" class="form-control"
+                                                                placeholder="نام و نام خانوادگی" required="required">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12" v-if="$page.props.auth.user == null">
+                                                        <div class="form-group">
+                                                            <input v-model.lazy="form.email" type="email" class="form-control" placeholder="ایمیل"
+                                                                required="required">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12" v-if="$page.props.auth.user == null">
+                                                        <div class="form-group">
+                                                            <input v-model.lazy="form.tel" type="text" name="phone" class="form-control"
+                                                                placeholder="تلفن">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-6">
+                                                        <div class="form-group">
+                                                            <label for="file">انتخاب مجری پروژه</label>
+                                                            <select v-model="form.entekhab" @change="clear" class="form-control ltr">
+                                                                <!-- <option value="0">فریلنسرها</option> -->
+                                                                <option v-if="props.companies" :value="props.companies.id">{{ props.companies.name_show }}</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-6" v-if="form.entekhab == 0 || props.companies && form.entekhab == props.companies.id">
+                                                        <div class="form-group">
+                                                            <label for="file"></label>
+                                                            <select v-model.lazy="form.group" @change="group" class="form-control ltr">
+                                                                <option v-if="menus.length > 0" :value="menu" v-for="(menu, index) in menus" :key="index">{{ menu.name }}</option>
+                                                                <option v-else disabled>گزینه ای یافت نشد.</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" v-if="form.entekhab == 0 || props.companies && form.entekhab == props.companies.id">
+                                                    <div class="col-sm-6 col-6">
+                                                        <div class="form-group">
+                                                            <select v-model.lazy="form.type" @change="type" class="form-control ltr">
+                                                                <option v-if="menu.length > 0 && form.group" v-for="(type, index) in menu" :key="index" :value="type">{{ type.name }}</option>
+                                                                <option v-else disabled>گزینه ای یافت نشد.</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-6">
+                                                        <div class="form-group">
+                                                            <select v-model.lazy="form.category" @change="category" class="form-control ltr">
+                                                                <option v-if="sections.length > 0 && form.type" v-for="(category, index) in sections" :key="index" :value="category">{{ category.name }}</option>
+                                                                <option v-else disabled>گزینه ای یافت نشد.</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" v-if="form.entekhab == 0">
+                                                    <div class="col-sm-12 col-12">
+                                                        <div class="form-group">
+                                                            <input v-model.lazy="form.title" type="text" class="form-control"
+                                                                placeholder=" یک عنوان در ارتباط با پروژه بنویسید.عنوان پروژه برای جذب طراحان مهم است."
+                                                                required="required">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <!-- <date-picker v-model.lazy="form.date" format="YYYY-MM-DD HH:mm:ss" display-format="dddd jDD jMMMM jYYYY" color="#1ABC9C" :min="now" type="date" placeholder=" حداكثر زمان براي طراحي و راه اندازي پروژه چقدر است؟"></date-picker> -->
+                                                            <input v-model.lazy="form.price" type="text" class="form-control"
+                                                                placeholder=" مبلغ(ریال) بودجه شما چقدر است؟" required="required">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" v-if="props.companies && form.entekhab == props.companies.id">
+                                                    <div class="col-sm-12 col-12">
+                                                        <div class="form-group">
+                                                            <input v-model.lazy="form.title" type="text" class="form-control"
+                                                                placeholder="یک عنوان در ارتباط با پروژه بنویسید."
+                                                                required="required">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" v-if="form.entekhab == 0 || props.companies && form.entekhab == props.companies.id">
+                                                    <div class="col-sm-12 col-12">
+                                                        <div class="form-group">
+                                                            <label for="file">در صورت نیاز میتوانید فایل با پسوند zip و rar بارگزاری نمایید.</label>
+                                                            <input class="form-control" type="file" @input="form.file = $event.target.files[0]"
+                                                                id="file" accept="zip/rar/*" />
+                                                            <progress v-if="form.progress" :value="form.progress.percentage" max="5">
+                                                                {{ form.progress.percentage }}%
+                                                            </progress>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" v-if="form.entekhab == 0 || props.companies && form.entekhab == props.companies.id">
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <Editor :api-key="ApiKey" :init="{menubar: false }" v-model="form.text"
+                                                                placeholder="توضیحات راجع به سایت دلخواه و همچنین اگر نمونه سایت مشابهی در رسته کاری خود می شناسید ،در اینجا معرفی نمایید." />
+                                                                <!-- <textarea v-model.lazy="form.text" name="text" id="text" class="form-control" rows="7" cols="25"
+                                                                placeholder="توضیحات راجع به سایت دلخواه و همچنین اگر نمونه سایت مشابهی در رسته کاری خود می شناسید ،در اینجا معرفی نمایید."></textarea> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" v-if="form.entekhab == 0 || props.companies && form.entekhab == props.companies.id">
+                                                <div class="col-12 mt-3">
+                                                    <button v-if="$page.props.auth.user == null" @click.prevent="submit" :class="{ 'opacity-25': form.processing }" :disabled="form.processing" class="btn btn-primary" id="btnContactUs">
+                                                        <span v-if="form.processing">پردازش...</span>
+                                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="form.processing"></span>
+                                                        <span v-else>ثبت</span>
+                                                    </button>
+                                                    <button v-else @click.prevent="submitLogin" :class="{ 'opacity-25': form.processing }" :disabled="form.processing" class="btn btn-primary" id="btnContactUs">
+                                                        <span v-if="form.processing">پردازش...</span>
+                                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="form.processing"></span>
+                                                        <span v-else>ثبت</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                </div>
+                            </section>
+                    </section>
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
                     <!--End Deals-->
 
                 </div>

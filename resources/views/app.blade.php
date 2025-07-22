@@ -1,5 +1,9 @@
 @php
+<<<<<<< HEAD
     use App\Models\Company;
+=======
+    use App\Models\User;
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="rtl" class="rtl" @class(['dark' => ($appearance ?? 'system') == 'dark'])>
@@ -33,8 +37,13 @@
         </style> --}}
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
+<<<<<<< HEAD
         @if (Company::first() && Company::first()->image)
             <link rel="shortcut icon" href="{{asset('storage/'.Company::find(1)->image->url)}}" type="image/x-icon">
+=======
+        @if (User::first() && User::first()->image)
+            <link rel="shortcut icon" href="{{asset('storage/'.User::find(1)->image->url)}}" type="image/x-icon">
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
         @endif
         {{-- <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" /> --}}

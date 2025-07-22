@@ -784,9 +784,15 @@ class OrderController extends Controller
         elseif($request->request->get('wallet') == 'behpardakht' && $cart->total > $wallet)
         {
             $url = route('verify');
+<<<<<<< HEAD
             $invoice = (new Invoice)->amount($cart->payment-$wallet);
             $invoice->detail(['user_id' => auth()->user()->id]);
             $payment = Payment1::via('behpardakht')->callbackUrl($url)->purchase($invoice, function($driver, $transactionId){
+=======
+            $invoice = (new Invoice)->amount($cart->payment - $wallet);
+            $invoice->detail(['user_id' => auth()->user()->id]);
+            $payment = Payment::via('behpardakht')->callbackUrl($url)->purchase($invoice, function($driver, $transactionId){
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 
             })->pay()->render();
 
@@ -809,9 +815,15 @@ class OrderController extends Controller
         {
 
             $url = route('verify');
+<<<<<<< HEAD
             $invoice = (new Invoice)->amount($cart->total-$users->profile->wallet);
             $invoice->detail(['user_id' => auth()->user()->id]);
             $payment = Payment1::via('sepehr')->callbackUrl($url)->purchase($invoice, function($driver, $transactionId){
+=======
+            $invoice = (new Invoice)->amount($cart->total - $wallet);
+            $invoice->detail(['user_id' => auth()->user()->id]);
+            $payment = Payment::via('sepehr')->callbackUrl($url)->purchase($invoice, function($driver, $transactionId){
+>>>>>>> b254bd31864daeeaa805e9f88aa61a499df7051b
 
             })->pay()->render();
 
